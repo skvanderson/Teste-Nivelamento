@@ -1,6 +1,6 @@
 # API de Busca de Operadoras
 
-Esta API foi desenvolvida para buscar informações sobre operadoras de planos de saúde em um arquivo CSV. Ela fornece um endpoint para realizar buscas por diferentes critérios nas informações das operadoras.
+Esta API foi desenvolvida para buscar informações sobre as operadoras de planos de saúde em um arquivo CSV. Ela fornece um endpoint para realizar buscas por diferentes critérios nas informações das operadoras.
 
 ## Requisitos
 
