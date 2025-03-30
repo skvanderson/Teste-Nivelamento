@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "b8b9e8f0-5b1a-4b8e-9b1a-5b1a4b8e9b1a",
+		"name": "Operadoras API",
+		"description": "Collection para testar a API de busca de operadoras",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buscar Operadora",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/procurar?q=unimed",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"procurar"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "unimed",
+							"description": "Termo de busca para filtrar operadoras"
+						}
+					]
+				},
+				"description": "Endpoint para buscar operadoras com base em um termo de pesquisa"
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Operadora (Sem Termo)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/procurar",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"procurar"
+					]
+				},
+				"description": "Exemplo de requisição sem o parâmetro de busca (deve retornar erro 400)"
+			},
+			"response": []
+		}
+	]
+} 
