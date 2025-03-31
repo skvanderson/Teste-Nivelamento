@@ -5,43 +5,60 @@ Este repositório contém soluções para os testes de nivelamento, abordando ta
 ## Estrutura do Projeto
 
 ```
-testes-nivelamento-automacao/
-│── Web_Scraping/
-│   ├── scraper.py  # Script para baixar anexos PDF
-│   ├── README.md  # Instruções sobre o Web Scraping
+teste-nivelamento/
+├── Web_Scraping/
+│   ├── scraper.py
+│   ├── requirements.txt
 │
-│── Transformacao_Dados/
-│   ├── ExtrairTabelaPdf.py  # Script para extrair dados dos PDFs
-│   ├── venv/  # Ambiente virtual (adicionado ao .gitignore)
-│   ├── README.md  # Instruções sobre a transformação de dados
+├── Transformacao_Dados/
+│   ├── ExtrairTabelaPdf.py
+│   ├── requirements.txt
 │
-│── Banco_Dados/
-│   ├── script_banco.py  # Script para manipulação de banco de dados
-│   ├── README.md  # Instruções sobre banco de dados
+├── Banco_Dados/
+│   ├── test_Query.sql     
 │
-│── API/
-│   ├── api.py  # Script para interagir com a API
-│   ├── README.md  # Instruções sobre API
+├── API/
+│   ├── api.py
+│   ├── requirements.txt
+│   ├── postman/
+│   │   └── Operadoras_API.postman_collection.json
+│   └── README.md
 │
-│── .gitignore  # Arquivos e pastas a serem ignorados pelo Git
-│── README.md  # Documentação geral do repositório
+├── .gitignore
+└── README.md
+
 ```
 
 ## 1. Web Scraping
 O objetivo do teste de Web Scraping é baixar os anexos I e II da ANS e compactá-los em um arquivo ZIP.
+Pré-requisitos
+Python 3.8+
 
-### Execução
+Bibliotecas: requests, BeautifulSoup4, zipfile
+
+### Instalação
 ```bash
 cd Web_Scraping
-python scraper.py
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# ou .\venv\Scripts\activate no Windows
+pip install -r requirements.txt
 ```
+### Execução
+```python scraper.py```
 
 ## 2. Transformação de Dados
 Este teste envolve a extração de dados de tabelas dos PDFs baixados, conversão para CSV e compactação do arquivo final.
 
+### Instalação
+```bash
+cd ../Transformacao_Dados
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 ### Execução
 ```bash
-cd Transformacao_Dados
 python ExtrairTabelaPdf.py
 ```
 
@@ -50,17 +67,35 @@ O teste de banco de dados envolve a manipulação de dados armazenados e consult
 
 ### Execução
 ```bash
-cd Banco_Dados
-python script_banco.py
+cd Teste de Banco de Dados
+Test_Query.sqç
 ```
 
 ## 4. API
 O teste de API consiste em interagir com um endpoint para enviar e receber dados.
 
+### Inicialização
+```bash
+cd ../API
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
 ### Execução
 ```bash
-cd API
-python api.py
+cd ../API
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+### Endpoints
+Método	Endpoint	Parâmetro	Exemplo
+GET	/procurar	q	/procurar?q=saude
+
+### Exemplo de Uso:
+```bash
+curl "http://localhost:5000/procurar?q=unimed" | jq
 ```
 
 ## Configuração do Ambiente
