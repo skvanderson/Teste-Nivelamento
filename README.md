@@ -109,9 +109,9 @@ pip install -r requirements.txt
 
 Faça um fork do projeto
 
-1. Crie sua branch (git checkout -b feature/nova-feature)
-2. Commit suas mudanças (git commit -m 'Adiciona feature')
-3. Push para a branch (git push origin feature/nova-feature)
-4. Abra um Pull Request
+1. Crie sua branch ```git checkout -b feature/nova-feature```
+2. Commit suas mudanças ```git commit -m 'Adiciona feature```
+3. Push para a branch ```git push origin feature/nova-feature```
+4. Abra um ```Pull Request```
 
 
